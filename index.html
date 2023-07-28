@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redcliffe Labs</title>
+    <style>
+        body,
+        main,
+        html {
+            height: 100%;
+            margin: 0;
+            padding-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .image {
+            display: flex;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+
+        .first-txt {
+            position: absolute;
+            align-items: center;
+            top: 15%;
+            left: 15%;
+            color: #22409a;
+            font-size: 60px;
+        }
+
+
+        #element {
+            position: absolute;
+            left: 30%;
+            top: 35%;
+            color: #34324f;
+            font-size: 40px;
+            font-family: cursive;
+        }
+         .image p{ position: absolute;
+            left: 27%;
+            top: 45%;
+            color: #777b7a;
+            font-size: 30px;
+
+        }
+
+        .bar {
+            border-radius: 5px;            
+            backdrop-filter: blur(20px);
+            background: rgba(12, 18, 28, 0.38);
+            position: absolute;
+            padding-left:30%;
+            top: 60%;
+            width: 60%;
+        }
+        .upload-message {
+        text-align: center;
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f1f1f1;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 18px;
+        color: #333;
+    }
+
+       
+        
+    </style>
+
+</head>
+
+<body>
+    <main>
+        <div class="image">
+            <img src="BACKGROUND.jpg" alt="background">
+            <div class="upload-message">
+                <?php
+                session_start();
+                if (isset($_SESSION['upload_message'])) {
+                    echo '<p>' . $_SESSION['upload_message'] . '</p>';
+                }
+                ?>
+            </div>
+            <h1 class="first-txt">
+                WELCOME TO REDCLIFFE LABS
+            </h1>
+            <span id="element"></span>
+            <p>Choose an excel file and get your reports in seconds </p>
+            <div class="bar">
+                <form action="upload.php" method="POST" enctype="multipart/form-data">
+                    <input type="file" name="fileUpload" id="fileUpload">
+                    <input type="submit" value="Upload">
+                </form>
+            </div>
+
+        </div>
+    </main>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Healthy India Ki Trusted Lab'],
+            typeSpeed: 60,
+            loop: true,
+        });
+    </script>
+    
+
+
+</body>
+
+</html>

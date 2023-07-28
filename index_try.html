@@ -1,0 +1,24 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multi-Select Checkbox Dropdown</title>
+    
+</head>
+<body>
+    <div class="dropdown">
+        <button class="dropbtn">Select Items</button>
+        <ul class="dropdown-content">
+            {% for name in names %}
+            <li><input type="checkbox" name="item" value="{{ name }}" />{{ name }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <script>
+        // Add your JavaScript code here
+        // ...
+    </script>
+</body>
+</html>
